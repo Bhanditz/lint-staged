@@ -13,7 +13,10 @@
     "node": ">=6"
   },
   "bin": "index.js",
-  "files": ["index.js", "src"],
+  "files": [
+    "index.js",
+    "src"
+  ],
   "scripts": {
     "precommit": "node index.js",
     "cz": "git-cz",
@@ -22,7 +25,9 @@
     "lint:fix": "npm run lint --fix",
     "pretest": "npm run lint",
     "test": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "dependencies": {
     "chalk": "^2.3.1",
@@ -46,7 +51,8 @@
     "please-upgrade-node": "^3.0.2",
     "staged-git-files": "1.1.1",
     "string-argv": "^0.0.2",
-    "stringify-object": "^3.2.2"
+    "stringify-object": "^3.2.2",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -71,7 +77,9 @@
   },
   "jest": {
     "testEnvironment": "node",
-    "setupFiles": ["./testSetup.js"]
+    "setupFiles": [
+      "./testSetup.js"
+    ]
   },
   "keywords": [
     "lint",
@@ -85,5 +93,6 @@
     "check",
     "format",
     "validate"
-  ]
+  ],
+  "snyk": true
 }
